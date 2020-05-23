@@ -124,9 +124,9 @@ RUN set -ex; \
 ## Install Python Packages
 COPY requirements.txt /home/rstudio/requirements.txt
 
-RUN pip install -r /home/replica/requirements.txt \
+RUN pip install -r /home/rstudio/requirements.txt \
     && pip install torch==1.5.0+cpu torchvision==0.6.0+cpu -f https://download.pytorch.org/whl/torch_stable.html \
-    && rm -rf /home/replica/requirements.txt
+    && rm -rf /home/rstudio/requirements.txt
 
 ## Install R Packages
 COPY install_packages.R /home/rstudio/install_packages.R
